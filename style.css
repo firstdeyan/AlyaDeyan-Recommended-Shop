@@ -1,0 +1,207 @@
+/* style.css */
+@font-face {
+    font-family: 'SoftFont';
+    src: url('path/to/soft-font.woff2') format('woff2'),
+        url('path/to/soft-font.woff') format('woff');
+    /* Tambahkan sumber font lainnya jika diperlukan */
+}
+
+/* Reset some default styles */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Your Chosen Font', sans-serif;
+    background-color: #f2f2f2;
+    color: #000000;
+}
+
+header {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    /* Center the navbar */
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+    /* Adjust the spacing between menu items */
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    background-color: #ff66cc;
+    /* Add hover effect */
+}
+
+#search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#search-form {
+    display: flex;
+    align-items: center;
+}
+
+#search-input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#search-form button {
+    background-color: #ff66cc;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#search-form button:hover {
+    background-color: #ff3399;
+    /* Add hover effect */
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow cards to wrap into multiple rows */
+    justify-content: center;
+    /* Center the cards */
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 10px;
+    /* Adjust the spacing between cards */
+    width: 200px;
+    /* Set card width */
+    display: flex;
+    flex-direction: column;
+
+}
+
+.card img {
+    width: 100%;
+    /* Make the image fill the card */
+    height: auto;
+    /* Set height to auto to maintain aspect ratio */
+    object-fit: contain;
+    /* Adjust object-fit property as needed */
+    margin-bottom: 10px;
+    /* Add space below the image */
+}
+
+.card h4 {
+    text-transform: uppercase;
+}
+
+.rating-image {
+    width: 10%;
+    display: flex;
+    flex-direction: row;
+    padding: 1px;
+    /* Mengatur lebar gambar rating menjadi 10% dari lebar gambar produk */
+}
+
+.product-name {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+.button {
+    display: inline-block;
+    color: #ffffff;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #ff3399;
+    /* Add hover effect */
+}
+
+.shopping-button {
+    width: 15%;
+    align-items: center;
+    /* Mengatur lebar tombol belanja menjadi 1/4 dari lebar gambar produk */
+}
+
+
+.saran-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.saran-form input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.saran-form button {
+    background-color: #ff66cc;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.saran-form button:hover {
+    background-color: #ff3399;
+    /* Add hover effect */
+}
+
+@media (max-width: 600px) {
+    .card {
+        width: 50%;
+    }
+
+    #product-list {
+        display: flex;
+        flex-wrap: wrap;
+        width: 50%;
+    }
+}
