@@ -1,10 +1,7 @@
 /* style.css */
-@font-face {
-    font-family: 'SoftFont';
-    src: url('path/to/soft-font.woff2') format('woff2'),
-        url('path/to/soft-font.woff') format('woff');
-    /* Tambahkan sumber font lainnya jika diperlukan */
-}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 /* Reset some default styles */
 body,
@@ -22,7 +19,7 @@ li {
 }
 
 body {
-    font-family: 'Your Chosen Font', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: #f2f2f2;
     color: #000000;
 }
@@ -32,6 +29,7 @@ header {
     text-align: center;
     padding: 20px;
 }
+
 
 nav {
     background-color: #000000;
@@ -65,13 +63,47 @@ nav ul li a:hover {
 
 #search-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin-top: 20px;
+}
+
+.search-input-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#search-input-number {
+    width: 40%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#search-input-name {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
 }
 
 #search-form {
     display: flex;
     align-items: center;
+}
+
+.search-button-container button {
+    display: flex;
+    justify-content: center;
+    background-color: #ff66cc;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 #search-input {
@@ -91,9 +123,33 @@ nav ul li a:hover {
 }
 
 #search-form button:hover {
-    background-color: #ff3399;
+    background-color: #d62bbf;
     /* Add hover effect */
 }
+
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-container select {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.dropdown-container button {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 4px;
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 
 main {
     padding: 20px;
@@ -109,7 +165,7 @@ main {
     padding: 20px;
     margin: 10px;
     /* Adjust the spacing between cards */
-    width: 200px;
+    width: 250px;
     /* Set card width */
     display: flex;
     flex-direction: column;
@@ -128,7 +184,8 @@ main {
 }
 
 .card h4 {
-    text-transform: uppercase;
+    text-transform: capitalize;
+    font-size: 16px;
 }
 
 .rating-image {
@@ -162,6 +219,7 @@ main {
 .shopping-button {
     width: 15%;
     align-items: center;
+    height: 40px;
     /* Mengatur lebar tombol belanja menjadi 1/4 dari lebar gambar produk */
 }
 
