@@ -74,6 +74,21 @@ nav ul li a:hover {
     margin-bottom: 10px;
 }
 
+
+.search-data {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#search-input-category {
+    width: 200%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
 #search-input-number {
     width: 40%;
     padding: 10px;
@@ -91,20 +106,10 @@ nav ul li a:hover {
 }
 
 #search-form {
-    display: flex;
+
     align-items: center;
 }
 
-.search-button-container button {
-    display: flex;
-    justify-content: center;
-    background-color: #ff66cc;
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
 #search-input {
     padding: 10px;
@@ -113,7 +118,8 @@ nav ul li a:hover {
     margin-right: 10px;
 }
 
-#search-form button {
+
+.search-data button {
     background-color: #ff66cc;
     color: #ffffff;
     padding: 10px 20px;
@@ -122,7 +128,7 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
-#search-form button:hover {
+.search-data button:hover {
     background-color: #d62bbf;
     /* Add hover effect */
 }
@@ -150,6 +156,11 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
+.dropdown-container select option:hover {
+    background-color: #ff66cc;
+    color: #ffffff;
+    /* Properti CSS lain yang ingin Anda atur saat item dihover */
+}
 
 main {
     padding: 20px;
@@ -165,7 +176,7 @@ main {
     padding: 20px;
     margin: 10px;
     /* Adjust the spacing between cards */
-    width: 250px;
+    width: 300px;
     /* Set card width */
     display: flex;
     flex-direction: column;
@@ -254,12 +265,40 @@ main {
 
 @media (max-width: 600px) {
     .card {
-        width: 50%;
+        width: 100%;
     }
 
     #product-list {
         display: flex;
         flex-wrap: wrap;
         width: 50%;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    #search-container {
+        flex-direction: column;
+    }
+
+    .search-input-container {
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+
+    #search-input-category {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #search-input-number {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #search-input-name {
+        width: 100%;
+        margin-bottom: 10px;
     }
 }

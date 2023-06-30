@@ -16,10 +16,22 @@
             <div class="search-input-container">
                 <input type="text" id="search-input-number" placeholder="Product Number">
                 <input type="text" id="search-input-name" placeholder="Product Name">
+                <div class="dropdown-container">
+                    <select id="search-input-category">
+                        <option value="">All Categories</option>
+                        <option value="Home Decor">Home Decor</option>
+                        <option value="Fashion">Fashion</option>
+                        <!-- Add more categories here -->
+                    </select>
+                </div>
+
+            </div>
+            <div class="search-data">
                 <button type="submit">Search</button>
             </div>
         </form>
     </div>
+
 
     <main id="product-list">
         <!-- Content will be dynamically loaded here -->

@@ -1,5 +1,3 @@
-// script.js
-
 let products = [
     {
         id: 1,
@@ -63,22 +61,46 @@ function generateProductCards() {
 
     const searchInputNumber = document.querySelector('#search-input-number').value.trim().toLowerCase();
     const searchInputName = document.querySelector('#search-input-name').value.trim().toLowerCase();
+    const searchInputCategory = document.querySelector('#search-input-category').value;
 
     let filteredProducts = [...originalProducts];
 
-    if (searchInputNumber !== '' && searchInputName === '') {
+    if (searchInputNumber !== '' && searchInputName === '' && searchInputCategory === '') {
         filteredProducts = filteredProducts.filter((product) => {
             return product.id.toString().includes(searchInputNumber);
         });
-    } else if (searchInputNumber === '' && searchInputName !== '') {
+    } else if (searchInputNumber === '' && searchInputName !== '' && searchInputCategory === '') {
         filteredProducts = filteredProducts.filter((product) => {
             return product.name.toLowerCase().includes(searchInputName);
         });
-    } else if (searchInputNumber !== '' && searchInputName !== '') {
+    } else if (searchInputNumber === '' && searchInputName === '' && searchInputCategory !== '') {
+        filteredProducts = filteredProducts.filter((product) => {
+            return product.category.toLowerCase() === searchInputCategory.toLowerCase();
+        });
+    } else if (searchInputNumber !== '' && searchInputName !== '' && searchInputCategory === '') {
         filteredProducts = filteredProducts.filter((product) => {
             const matchNumber = product.id.toString().includes(searchInputNumber);
             const matchName = product.name.toLowerCase().includes(searchInputName);
             return matchNumber && matchName;
+        });
+    } else if (searchInputNumber !== '' && searchInputName === '' && searchInputCategory !== '') {
+        filteredProducts = filteredProducts.filter((product) => {
+            const matchNumber = product.id.toString().includes(searchInputNumber);
+            const matchCategory = product.category.toLowerCase() === searchInputCategory.toLowerCase();
+            return matchNumber && matchCategory;
+        });
+    } else if (searchInputNumber === '' && searchInputName !== '' && searchInputCategory !== '') {
+        filteredProducts = filteredProducts.filter((product) => {
+            const matchName = product.name.toLowerCase().includes(searchInputName);
+            const matchCategory = product.category.toLowerCase() === searchInputCategory.toLowerCase();
+            return matchName && matchCategory;
+        });
+    } else if (searchInputNumber !== '' && searchInputName !== '' && searchInputCategory !== '') {
+        filteredProducts = filteredProducts.filter((product) => {
+            const matchNumber = product.id.toString().includes(searchInputNumber);
+            const matchName = product.name.toLowerCase().includes(searchInputName);
+            const matchCategory = product.category.toLowerCase() === searchInputCategory.toLowerCase();
+            return matchNumber && matchName && matchCategory;
         });
     }
 
@@ -131,7 +153,6 @@ function generateProductCards() {
             lazadaLogo.src = 'img/logo/logo_lazada.png'; // Replace with the Lazada logo image path
             lazadaLink.appendChild(lazadaLogo);
             buttonContainer.appendChild(lazadaLink);
-
         }
 
         if (product.tiktokLink) {
@@ -143,7 +164,6 @@ function generateProductCards() {
             tiktokLink.appendChild(tiktokLogo);
             buttonContainer.appendChild(tiktokLink);
         }
-
 
         card.appendChild(buttonContainer);
 
@@ -159,22 +179,28 @@ generateProductCards();
 const searchForm = document.querySelector('#search-form');
 const searchInputNumber = document.querySelector('#search-input-number');
 const searchInputName = document.querySelector('#search-input-name');
+const searchInputCategory = document.querySelector('#search-input-category');
+
+// ...
 
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const searchNumber = searchInputNumber.value.trim().toLowerCase();
     const searchName = searchInputName.value.trim().toLowerCase();
+    const searchCategory = searchInputCategory.value;
 
-    if (searchNumber === '' && searchName === '') {
+    if (searchNumber === '' && searchName === '' && searchCategory === '') {
         generateProductCards();
     } else {
         const filteredProducts = products.filter((product) => {
             const productName = product.name.toLowerCase();
             const productNumber = product.id.toString();
+            const productCategory = product.category.toLowerCase();
 
             return (
                 (searchNumber !== '' && productNumber.includes(searchNumber)) ||
-                (searchName !== '' && productName.includes(searchName))
+                (searchName !== '' && productName.includes(searchName)) ||
+                (searchCategory !== '' && productCategory === searchCategory)
             );
         });
 
